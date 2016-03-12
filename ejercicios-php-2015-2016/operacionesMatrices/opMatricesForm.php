@@ -8,6 +8,7 @@
       <form action="opMatrices.php" method="post" enctype="multipart/form-data">
          
          <?php
+            //función que agrega a un formulario cuadros de texto para introducir los valores de la mariz $name de $fx$c
             function formMatriz($name,$f,$c) {
                echo "<table border='1'>";
                for($i=0;$i<$f;$i++) {
