@@ -1,0 +1,43 @@
+<?php
+   $entidad=$_GET['entidad'];
+   $oficina=$_GET['oficina'];
+   $cuenta=$_GET['cuenta'];
+   //para hacer pruebas
+   $entidad=1234; $oficina=1234; $cuenta=1234567890;
+   //chequeamos los datos
+   if (strlen($entidad) < 4) {
+      echo "<span style='color: red;'>La entidad debe constar de 4 dígitos";
+   } elseif (strlen($oficina) < 4) {
+      echo "<span style='color: red;'>La oficina debe constar de 4 dígitos";
+   } else {
+      for($i=strlen($cuenta);$i<10;$i++) {
+         $cuenta="0".$cuenta;
+      }
+   }
+   $pesos=array(1,2,4,8,5,10,9,7,3,6);
+   $entidadOficina="00".$entidad.$oficina;
+   $d1=$d2=0;
+   echo "Cuenta: $cuenta";
+   for($i=0;$i<count($pesos);$i++) { //foreach($pesos as $p)
+      $d1+=$pesos[$i]*$entidadOficina[$i];
+      $d2+=$pesos[$i]*substr($cuenta,$i,1);
+   }
+   echo "d1: $d1, d2: $d2";
+   $d1=11-$d1%11;
+   $d2=11-$d2%11;
+   if ($d1 == 11) {
+      $d1=0;
+   } elseif ($d1 == 10) {
+      $d1=1;
+   }
+   if ($d2 == 11) {
+      $d2=0;
+   } elseif ($d2 == 10) {
+      $d2=1;
+   }
+   echo "<br/><br/>Los dígitos de control de $entidad|$oficina|$cuenta, son: $d1$d2\n";
+       
+   
+   
+   
+?>
