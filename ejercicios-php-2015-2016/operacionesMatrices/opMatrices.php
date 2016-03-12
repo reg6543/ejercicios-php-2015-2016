@@ -6,6 +6,7 @@
    </head>
    <body>
       <?php
+         //funciones auxiliares
          function mensaError($mensa) {
             echo "<span style='color: red; font-size=14;'>$mensa</span>";
          }
