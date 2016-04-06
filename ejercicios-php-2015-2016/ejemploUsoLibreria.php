@@ -13,6 +13,7 @@
 		   echo "Las soluciones son x1: $x1 y x2: $x2.<br/>\n" ;
 		   echo "La suma de 3 y 5 es: ",suma(3,5),"<br/>\n";
 		   echo "Nuevo cambio";
+		   echo "Otro cambio";
       ?>
 
    </body>
